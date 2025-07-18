@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #0B1426;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-accent-500 to-accent-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-accent-500/25 transform-gpu;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent backdrop-blur-sm text-accent-400 px-6 py-3 rounded-full font-medium border-2 border-accent-400 transition-all duration-300 hover:bg-accent-400 hover:text-white hover:scale-105;
+  }
+  
+  .card {
+    @apply bg-navy-800/50 backdrop-blur-md p-8 rounded-2xl border border-accent-500/20 shadow-lg hover:shadow-2xl hover:shadow-accent-500/10 transition-all duration-500 hover:-translate-y-3 transform-gpu relative overflow-hidden;
+  }
+  
+  .card::before {
+    @apply content-[''] absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-accent-400/10 to-transparent transition-all duration-500;
+  }
+  
+  .card:hover::before {
+    @apply left-full;
+  }
+  
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-white to-accent-300 bg-clip-text text-transparent;
+  }
+  
+  .section-subtitle {
+    @apply text-lg md:text-xl text-gray-300 text-center max-w-3xl mx-auto mb-16;
+  }
+  
+  .hero-gradient {
+    @apply bg-gradient-to-br from-navy-950 via-navy-900 to-primary-800;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent-400 to-accent-600 bg-clip-text text-transparent;
+  }
+  
+  .glass {
+    @apply bg-navy-800/30 backdrop-blur-md border border-accent-500/20;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg bg-navy-800/70 border border-accent-500/30 focus:border-accent-400 focus:ring-2 focus:ring-accent-400/20 focus:outline-none transition-all duration-300 placeholder-gray-400 text-white;
+  }
+  
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+  
+  .navy-section {
+    @apply bg-navy-900;
+  }
+  
+  .navy-card {
+    @apply bg-navy-800/80 border border-accent-500/20;
+  }
+}
+
+@layer utilities {
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+  
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+  
+  .animation-delay-1000 {
+    animation-delay: 1000ms;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B1426;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #3b82f6, #2563eb);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #60a5fa, #3b82f6);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(59, 130, 246, 0.3);
+  color: #ffffff;
+}
